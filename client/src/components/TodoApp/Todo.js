@@ -23,7 +23,7 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   }
 
   return todos.map((todo, index) => (
-    <Box
+    <Box maxW={'1000px'}
       className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
       key={index}
     >
