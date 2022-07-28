@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -16,9 +17,27 @@ export const Signup = ({ googleButtonImage, appleButtonLogo }) => {
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     console.log("user in signup:", user);
+
+    let error = null;
+    let response = await axios
+      .post("http://localhost:8080/auth/signup", user)
+      .catch((err) => {
+        console.log("err:", err);
+        error = err.response.data.message;
+      });
+
+    if (response) {
+      console.log("response:", response.data[0]);
+      localStorage.setItem("token", response.data[0]);
+    //   navigate(`/${response.data[0]}`);
+    }
+    if (error) {
+      console.log("error:", error);
+      window.alert(error);
+    }
   };
 
   return (

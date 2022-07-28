@@ -32,7 +32,7 @@ export const Login = ({ googleButtonImage, appleButtonLogo }) => {
     if (response) {
       console.log("response:", response.data[0]);
       localStorage.setItem("token", response.data[0]);
-      navigate(`/${response.data[0]}`);
+      //   navigate(`/${response.data[0]}`);
     }
     if (error) {
       console.log("error:", error);
