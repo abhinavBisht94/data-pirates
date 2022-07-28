@@ -48,11 +48,13 @@
     outline: none;
     width: 320px;
     background: transparent;
-    color: #fff;
+    /* color: #fff; */
+    color: #161a2b;
   }
   
   .todo-input::placeholder {
-    color: #e2e2e2;
+    /* color: #e2e2e2; */
+    color: #161a2b;
   }
   
   .todo-button {

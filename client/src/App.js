@@ -1,15 +1,12 @@
 
 import './CSS/App.css'
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import TodoList from './components/TodoApp/TodoList';
+import AllRoutes from './pages/AllRoutes';
 
 function App() {
   return (
     <div className="App">
-     <Navbar />
-     <Hero />
-     <TodoList />
+       <AllRoutes/>
     </div>
   );
 }

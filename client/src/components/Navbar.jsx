@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { Link as Link1 } from 'react-router-dom'
 import {
   Box,
   Flex,
@@ -19,7 +20,7 @@ import {
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
-const Links = ['Dashboard', 'Projects', 'Team'];
+const Links = ['Timer', 'Other', ''];
 
 const NavLink = ({ children }) => (
   <Link
@@ -30,7 +31,7 @@ const NavLink = ({ children }) => (
       textDecoration: 'none',
       bg: useColorModeValue('gray.200', 'gray.700'),
     }}
-    href={'#'}>
+   >
     {children}
   </Link>
 );
@@ -40,7 +41,7 @@ export default function Simple() {
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+      <Box bg={'#f6fff8'} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -51,15 +52,17 @@ export default function Simple() {
           />
           <HStack spacing={8} alignItems={'center'}>
             <Box>
+              <Link1 to='/'>
                 <Image cursor='pointer' width='35px' borderRadius={'50%'} src="https://media-exp1.licdn.com/dms/image/C4D0BAQFFj9ofnI-gpA/company-logo_200_200/0/1633441317808?e=2147483647&v=beta&t=XOiIdcdoibTe98K8L2TWxWSFz_xwu7M_faCQzPVa02E" />
+                </Link1>
             </Box>
             <HStack
               as={'nav'}
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
-              {Links.map((link) => (
-                <NavLink  key={link}>{link}</NavLink>
-              ))}
+              {
+                <Link1 to='/timer'><NavLink  key={"Timer"}>Timer</NavLink></Link1>
+             }
             </HStack>
           </HStack>
           <Flex alignItems={'center'}>
