@@ -61,7 +61,11 @@ export default function Simple() {
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
               {
+                <>
+                <Link1 to='/'>Home</Link1>
                 <Link1 to='/timer'>Timer</Link1>
+                <Link1 to='/'>Diary</Link1>
+                </>
              }
             </HStack>
           </HStack>
@@ -81,8 +85,8 @@ export default function Simple() {
                 />
               </MenuButton>
               <MenuList>
-                <MenuItem>Log In</MenuItem>
-                <MenuItem>Sign Up</MenuItem>
+                <MenuItem><Link1 to='/login'>Log In</Link1></MenuItem>
+                <MenuItem><Link1 to='/signup'>Sign up</Link1></MenuItem>
                 <MenuDivider />
                 <MenuItem>Sign Out</MenuItem>
               </MenuList>
@@ -93,9 +97,9 @@ export default function Simple() {
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
+            {
+                <Link1 to='/timer'>Timer</Link1>
+             }
             </Stack>
           </Box>
         ) : null}

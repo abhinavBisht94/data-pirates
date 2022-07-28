@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import "../CSS/signup.css";
 
-export const Signup = ({ googleButtonImage, appleButtonLogo }) => {
+ const Signup = ({ googleButtonImage, appleButtonLogo }) => {
   const navigate = useNavigate();
 
   const [user, setUser] = useState({});
@@ -66,3 +66,5 @@ export const Signup = ({ googleButtonImage, appleButtonLogo }) => {
     </div>
   );
 };
+
+export default Signup

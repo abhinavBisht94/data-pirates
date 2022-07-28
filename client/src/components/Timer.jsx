@@ -67,7 +67,7 @@ function Timer() {
         </div>
         <Center mt='30px'>
         <Button mr='25px' onClick={()=>handleReset()}>Reset Timer</Button>
-        <Button width={'120px'} boxSizing='border-box' mr='25px' onClick={()=>setPlay(!play)}>{play===true? "Pause" : "Play"} Timer</Button>
+        <Button width={'120px'} boxSizing='border-box' mr='25px' onClick={()=>setPlay(!play)}>{play===true? "Pause" : "Start"} Timer</Button>
         <Button mr='25px' colorScheme={'red'} onClick={()=>{
             console.log("ramesh")
             setKey(prev=>prev+1)
