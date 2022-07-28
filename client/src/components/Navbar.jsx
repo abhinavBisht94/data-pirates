@@ -61,7 +61,7 @@ export default function Simple() {
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
               {
-                <Link1 to='/timer'><NavLink  key={"Timer"}>Timer</NavLink></Link1>
+                <Link1 to='/timer'>Timer</Link1>
              }
             </HStack>
           </HStack>
