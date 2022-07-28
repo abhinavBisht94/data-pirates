@@ -24,7 +24,7 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
 
   return todos.map((todo, index) => (
     <Box maxW={'1000px'}
-      className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
+      className={todo.status ? 'todo-row complete' : 'todo-row'}
       key={index}
     >
       <div key={todo.id} onClick={() => completeTodo(todo.id)}>

@@ -2,9 +2,26 @@
   "todos": [
     {
       "id": 1,
-      "content": "Go for a Walk"
-     
+      "text": "Go for a Walk",
+      "status": false
+    },
+    {
+      "id": 2,
+      "text": "Dance and Sing",
+      "status": false
+    },
+    {
+      "id": 402,
+      "text": "Have some Fun",
+      "status": false
+    },
+    {
+      "id": 5166,
+      "text": "Take good sleep"
+    },
+    {
+      "id": 3797,
+      "text": "Sing a Poem"
     }
   ]
-  
 }
