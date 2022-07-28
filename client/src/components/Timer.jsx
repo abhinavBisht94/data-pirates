@@ -40,7 +40,7 @@ const renderTime = ({ remainingTime }) => {
 function Timer() {
   const [key, setKey] = useState(0);
   const [play, setPlay] = useState(false);
-  const [time, setTime] = useState(600);
+  const [time, setTime] = useState(1800);
 
   const [show, setShow] = useState(true);
   function showHandle(val) {
@@ -57,7 +57,7 @@ function Timer() {
   }
 
   return (
-    <Box mt="50px">
+    <Box mt="30px">
       <Center my="30px" mx="auto">
         <TimerInput
           handleTime={handleTime}

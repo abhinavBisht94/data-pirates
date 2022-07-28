@@ -5,6 +5,7 @@ import Home from './Home'
 import TimerPage from './TimerPage'
 import Login from './Login'
 import Signup from './Signup'
+import Diary from './Diary'
 
 const AllRoutes = () => {
   return (
@@ -15,6 +16,8 @@ const AllRoutes = () => {
             <Route path='/timer' element={<TimerPage />} />
             <Route path='/login' element={<Login/>} />
             <Route path='/signup' element={<Signup />} />
+            <Route path='/diary' element={<Diary />} />
+
         </Routes>
 
     </div>

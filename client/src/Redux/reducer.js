@@ -5,7 +5,8 @@ const init = {
 
         todoArr  : [],
         isLoading : false,
-        isError : false
+        isError : false,
+        current : {}
 
 }
 
@@ -33,6 +34,12 @@ export default function reducer(state=init,action){
                 ...state,
                 isLoading :false,
                 isError : true
+            }
+
+        case obj.CURRENT_TODO :
+            return {
+                ...state,
+                current : payload
             }
 
         default :

@@ -5,7 +5,7 @@ import TodoList from '../components/TodoApp/TodoList'
 const Home = () => {
   return (
     <div>
-        <Hero />
+        <Hero text1="This is just a day" text2="Make it your day" />
         <TodoList />
     </div>
   )

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TodoForm from "./TodoForm";
 import Todo from "./Todo";
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Center, Spinner, Text } from "@chakra-ui/react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { ErrorOutlineSharp } from "@material-ui/icons";
@@ -13,12 +13,14 @@ function TodoList() {
   // console.log({arr})
 
   const [todos, setTodos] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
       .get("http://localhost:8080/todos")
       .then((res) => {
         setTodos(res.data);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
@@ -108,6 +110,17 @@ function TodoList() {
         What's the Plan for Today?
       </Text>
       <TodoForm onSubmit={addTodo} />
+      {loading && (
+        <Center>
+          <Spinner
+            thickness="4px"
+            speed="0.65s"
+            emptyColor="gray.200"
+            color="blue.500"
+            size="xl"
+          />
+        </Center>
+      )}
       <Todo
         todos={todos}
         completeTodo={completeTodo}
