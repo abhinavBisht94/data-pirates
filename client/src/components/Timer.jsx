@@ -4,12 +4,16 @@ import '../CSS/timer.css'
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import { useState } from 'react';
 import TimerInput from './TimerInput';
+import Sound from './Sound';
 
 
 
 const renderTime = ({ remainingTime }) => {
     if (remainingTime === 0) {
-      return <Text fontSize={'1.25rem'} className="timer">Time Ends...</Text>;
+      return (<Box>
+         <Sound/>
+        <Text fontSize={'1.25rem'} className="timer">Time Ends...</Text>
+        </Box>);
     }
 
     const hours = Math.floor(remainingTime / 3600)
@@ -42,6 +46,7 @@ function Timer() {
 
     return (
         <Box mt='80px'>
+           
            <Center  my='30px' mx='auto' >
                 <TimerInput handleTime={handleTime}   />
             </Center> 
