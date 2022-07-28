@@ -25,7 +25,7 @@ taskrouter.post("/:userid", async (req, res) => {
       res.status(500).send({ message: "Error occurred" });
     }
     // console.log("success:", success);
-    return res.status(201).send({ message: "Task saved" });
+    return res.status(201).send({ message: "Todo/task saved" });
   });
 });
 
@@ -33,10 +33,10 @@ taskrouter.get("/:userid", async (req, res) => {
   const { userid } = req.params;
   //   console.log("userid:", userid);
 
-  let searchResult = await TaskModel.find({ id: [userid] });
-  console.log("searchResult:", searchResult);
-
   //! "GET" all task based on userid
+  let searchResult = await TaskModel.find({ id: [userid] });
+  console.log("searchResult:", [...searchResult]);
+
   return res.status(201).send(searchResult);
 });
 
@@ -50,17 +50,17 @@ taskrouter.patch("/:userid/:taskid", async (req, res) => {
   //! "POST" the modified task
   let receivedTask = req.body;
   receivedTask.userid = userid;
-  //   console.log("receivedTask:", receivedTask);
+  console.log("receivedTask:", receivedTask);
 
   const sendTask = await new TaskModel(receivedTask);
+  let error = null;
   sendTask.save((err, success) => {
     if (err) {
+      error = err;
       res.status(500).send({ message: "Error occurred" });
     }
     // console.log("success:", success);
     // return res.status(201).send({ message: "Task saved" });
-
-    resultDisplay();
   });
 
   const resultDisplay = async () => {
@@ -69,6 +69,10 @@ taskrouter.patch("/:userid/:taskid", async (req, res) => {
     //   console.log("searchResult:", searchResult);
     return res.status(201).send(searchResult);
   };
+
+  if (!error) {
+    resultDisplay();
+  }
 });
 
 taskrouter.delete("/:userid/:taskid", async (req, res) => {

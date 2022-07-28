@@ -1,0 +1,59 @@
+#displayTodoV2 {
+  /* border: 1px solid red; */
+  width: 50%;
+  margin: auto;
+  padding: 1.5rem;
+}
+
+.todoV2DivFalse {
+  /* border: 1px solid blue; */
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(
+    90deg,
+    rgba(48, 16, 255, 1) 0%,
+    rgba(100, 115, 255, 1) 100%
+  );
+  padding: 0.5rem;
+
+  border-radius: 1rem;
+}
+.todoV2DivFalse p {
+  color: white;
+  font-weight: bold;
+}
+.todoV2DivFalse button {
+  border: none;
+  border-radius: 2rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+
+  margin-right: 1rem;
+  padding: 0.5rem;
+}
+
+.todoV2DivTrue {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1rem;
+}
+.todoV2DivTrue input {
+  border: 1px solid black;
+  width: 60%;
+  background-color: lightGrey;
+  border: 2px solid Grey;
+  border-radius: 15px;
+  padding: 0.5rem 1rem;
+}
+.todoV2DivTrue button {
+  border: none;
+  border-radius: 2rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+
+  margin-right: 1rem;
+  padding: 0.5rem;
+}

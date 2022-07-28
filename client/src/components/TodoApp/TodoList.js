@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import TodoForm from './TodoForm';
-import Todo from './Todo';
-import { Box, Text } from '@chakra-ui/react';
+import React, { useState } from "react";
+import TodoForm from "./TodoForm";
+import Todo from "./Todo";
+import { Box, Text } from "@chakra-ui/react";
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
 
-  const addTodo = todo => {
+  const addTodo = (todo) => {
     if (!todo.text || /^\s*$/.test(todo.text)) {
       return;
     }
@@ -22,17 +22,19 @@ function TodoList() {
       return;
     }
 
-    setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
+    setTodos((prev) =>
+      prev.map((item) => (item.id === todoId ? newValue : item))
+    );
   };
 
-  const removeTodo = id => {
-    const removedArr = [...todos].filter(todo => todo.id !== id);
+  const removeTodo = (id) => {
+    const removedArr = [...todos].filter((todo) => todo.id !== id);
 
     setTodos(removedArr);
   };
 
-  const completeTodo = id => {
-    let updatedTodos = todos.map(todo => {
+  const completeTodo = (id) => {
+    let updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
         todo.isComplete = !todo.isComplete;
       }
@@ -42,8 +44,10 @@ function TodoList() {
   };
 
   return (
-    <Box my='40px'>
-      <Text my='20px' fontSize={'1.25rem'} textAlign={'center'}>What's the Plan for Today?</Text>
+    <Box my="40px">
+      <Text my="20px" fontSize={"1.25rem"} textAlign={"center"}>
+        What's the Plan for Today?
+      </Text>
       <TodoForm onSubmit={addTodo} />
       <Todo
         todos={todos}

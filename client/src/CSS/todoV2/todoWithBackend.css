@@ -1,0 +1,39 @@
+/* #todoV2 {
+} */
+
+#todoV2Form {
+  /* border: 1px solid red; */
+  width: 40%;
+  margin: auto;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.todoV2FormInput {
+  border: 1px solid black;
+  width: 80%;
+  background-color: lightGrey;
+  border: 2px solid Grey;
+  border-radius: 15px;
+  padding: 0.5rem 1rem;
+}
+.todoV2FormInput:focus {
+  background-color: white;
+}
+
+.todoV2FormButton {
+  width: 20%;
+
+  background-color: teal;
+  border: none;
+  border-radius: 2rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+.todoV2FormButton:hover {
+  background-color: goldenrod;
+  color: black;
+}
