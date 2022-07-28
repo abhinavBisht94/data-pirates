@@ -9,6 +9,8 @@ const dotenv = require("dotenv");
 const connection = require("./db");
 const UserSchema = require("./models/UserModel");
 const authRouter = require("./routes/auth.routes");
+const TaskModel = require("./models/TaskModel");
+const taskrouter = require("./routes/task.routes");
 
 //---------------------------------------
 // Middleware
@@ -22,6 +24,7 @@ app.use(morgan("dev"));
 dotenv.config();
 
 app.use("/auth", authRouter);
+app.use("/task", taskrouter);
 
 //---------------------------------------
 app.get("/", async (req, res) => {
