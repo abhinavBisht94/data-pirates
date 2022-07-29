@@ -14,18 +14,18 @@ const Diary = () => {
 
     useEffect(()=>{
         textRef.current.focus()
-        axios.get('http://localhost:8080/diary/1')
-        .then(res=>{
-            // console.log(res.data.content)
-           setDiary(res.data.content)
-        })
+        // axios.get('http://localhost:8080/diary/1')
+        // .then(res=>{
+        //     console.log(res.data.content)
+        //    setDiary(res.data.content)
+        // })
     },[])
 
     function handleChange(e){
         setDiary(e.target.value)
-        axios.patch('http://localhost:8080/diary/1',{content : e.target.value})
-        .then(res=>console.log(res))
-        .catch(err=>console.log(err))
+        // axios.patch('http://localhost:8080/diary/1',{content : e.target.value})
+        // .then(res=>console.log(res))
+        // .catch(err=>console.log(err))
     }
 
   return (
