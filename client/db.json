@@ -1,27 +1,20 @@
 {
   "todos": [
     {
-      "id": 1,
-      "text": "Go for a Walk",
-      "status": false
+      "id": 4263,
+      "text": "Practice 1:30 hour DSA"
     },
     {
-      "id": 2,
-      "text": "Dance and Sing",
-      "status": false
+      "id": 8429,
+      "text": "Do some work on project"
     },
     {
-      "id": 402,
-      "text": "Have some Fun",
-      "status": false
+      "id": 8301,
+      "text": "Revise react theory"
     },
     {
-      "id": 5166,
-      "text": "Take good sleep"
-    },
-    {
-      "id": 3797,
-      "text": "Sing a Poem"
+      "id": 3441,
+      "text": "Meditate"
     }
   ],
   "diary": [
