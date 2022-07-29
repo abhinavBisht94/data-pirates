@@ -1,0 +1,30 @@
+{
+  "todos": [
+    {
+      "id": 4263,
+      "text": "Practice 1:30 hour DSA"
+    },
+    {
+      "id": 8429,
+      "text": "Do some work on project"
+    },
+    {
+      "id": 8301,
+      "text": "Revise react theory"
+    },
+    {
+      "id": 3441,
+      "text": "Meditate"
+    },
+    {
+      "id": 8951,
+      "text": "play music"
+    }
+  ],
+  "diary": [
+    {
+      "id": 1,
+      "content": ""
+    }
+  ]
+}

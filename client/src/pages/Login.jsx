@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import "../CSS/login.css";
 
-export const Login = ({ googleButtonImage, appleButtonLogo }) => {
+ const Login = ({ googleButtonImage, appleButtonLogo }) => {
   const navigate = useNavigate();
 
   const [user, setUser] = useState({});
@@ -68,3 +68,6 @@ export const Login = ({ googleButtonImage, appleButtonLogo }) => {
     </div>
   );
 };
+
+
+export default Login

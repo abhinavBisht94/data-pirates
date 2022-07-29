@@ -1,8 +1,12 @@
-import React, { useState } from "react";
-import TodoForm from "./TodoForm";
-import { RiCloseCircleLine } from "react-icons/ri";
-import { TiEdit } from "react-icons/ti";
-import { Box } from "@chakra-ui/react";
+import React, { useState } from 'react';
+import TodoForm from './TodoForm';
+import { RiCloseCircleLine } from 'react-icons/ri';
+import { TiEdit } from 'react-icons/ti'
+import { Box, Icon } from '@chakra-ui/react';
+import {FaLongArrowAltRight} from 'react-icons/fa'
+import { useDispatch } from 'react-redux';
+import { currentTodo } from '../../Redux/actions';
+import { useNavigate } from 'react-router-dom'
 
 const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   const [edit, setEdit] = useState({
@@ -10,7 +14,10 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
     value: "",
   });
 
-  const submitUpdate = (value) => {
+  const dispatch = useDispatch()
+  const nav = useNavigate()
+
+  const submitUpdate = value => {
     updateTodo(edit.id, value);
     setEdit({
       id: null,
@@ -23,9 +30,8 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   }
 
   return todos.map((todo, index) => (
-    <Box
-      maxW={"1000px"}
-      className={todo.isComplete ? "todo-row complete" : "todo-row"}
+    <Box maxW={'1000px'}
+      className={todo.status ? 'todo-row complete' : 'todo-row'}
       key={index}
     >
       <div key={todo.id} onClick={() => completeTodo(todo.id)}>
@@ -40,6 +46,13 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
           onClick={() => setEdit({ id: todo.id, value: todo.text })}
           className="edit-icon"
         />
+        <Icon ml='7px' onClick={()=>{
+          dispatch(currentTodo(todo))
+          localStorage.setItem("currentObj",JSON.stringify(todo))
+          nav('/timer')
+
+        }
+      } as={FaLongArrowAltRight} />
       </div>
     </Box>
   ));

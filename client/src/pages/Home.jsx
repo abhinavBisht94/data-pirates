@@ -7,13 +7,17 @@ import { Login } from "./Login";
 const Home = () => {
   return (
     <div>
-      <Hero />
-      {/* <TodoList /> */}
-
-      {/* <Login /> */}
-      <TodoWithBackend />
+        <Hero text1="This is just a day" text2="Make it your day" />
+        {/* <TodoList /> */}
+        {/* <Login /> */}
+       <TodoWithBackend />
     </div>
-  );
-};
+  )
+}
+
+      
+  
+ 
+
 
 export default Home;
