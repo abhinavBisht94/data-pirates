@@ -1,10 +1,20 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { RiCloseCircleLine } from 'react-icons/ri';
+import { TiEdit } from 'react-icons/ti'
+import { Box, Icon, Input, Text } from '@chakra-ui/react';
+import {FaLongArrowAltRight} from 'react-icons/fa'
+import { TiDelete} from 'react-icons/ti'
+import { useNavigate } from 'react-router-dom'
+import '../../CSS/App.css'
+
 
 import "../../CSS/todoV2/displayTodoV2.css";
 
 export const DisplayTodoV2 = ({ displayTodo, getData }) => {
   let userid = localStorage.getItem("userid") || "";
+
+  const nav = useNavigate()
 
   useEffect(() => {
     // console.log("displayTodo");
@@ -76,30 +86,33 @@ export const DisplayTodoV2 = ({ displayTodo, getData }) => {
     setEditText(event.target.value);
   };
 
+  function handleCurrent(task){
+    // console.log("task",task)
+    localStorage.setItem("currentObj",JSON.stringify(task))
+    nav('/timer')
+  }
+
   return (
     <div id="displayTodoV2">
       {displayTodo.map((task) => {
         return (
-          <div className="todoV2Div" key={task._id}>
-            <div className="todoV2DivFalse">
-              <p>{task.title}</p>
-              <button
-                style={{ backgroundColor: "goldenrod" }}
-                onClick={() => {
+          <div className="todoV2Div"   key={task._id}>
+            <Box bg='#f5dd90' mb='15px' borderRadius={'md'} p='10px 12px' maxW={'900px'} display={"flex"} justifyContent='space-between'>
+              <Text fontSize={'1.1rem'}>{task.title}</Text>
+              <Box>
+                <Icon color={'blue.800'} mr='12px' fontSize={'1.35rem'} cursor='pointer'  onClick={() => {
                   taskEdit(task._id, task.title);
-                }}
-              >
-                Edit
-              </button>
-              <button
-                style={{ backgroundColor: "maroon" }}
-                onClick={() => {
+                }} as={TiEdit} />
+             
+             
+              <Icon color={'red.600'} mr='12px' cursor={'pointer'} onClick={() => {
                   taskDelete(task._id);
-                }}
-              >
-                Delete
-              </button>
-            </div>
+                }} fontSize={'1.35rem'} as={TiDelete} />
+
+                <Icon onClick={()=> handleCurrent(task)} cursor={'pointer'} as={FaLongArrowAltRight} />
+
+                </Box>
+            </Box>
 
             {/* {editid===task._id} */}
 
@@ -108,7 +121,9 @@ export const DisplayTodoV2 = ({ displayTodo, getData }) => {
               style={editid === task._id ? {} : { display: "none" }}
             >
               {/* onKeyDown={handleChange} */}
-              <input
+              <Box>
+              <Input
+                style={{width:'300px'}}
                 type="text"
                 value={editText}
                 onChange={(e) => {
@@ -117,11 +132,12 @@ export const DisplayTodoV2 = ({ displayTodo, getData }) => {
               />
 
               <button
-                style={{ backgroundColor: "darkgreen" }}
+                style={{ backgroundColor: "green",borderRadius:'15px',marginLeft:'25px' }}
                 onClick={handleEditDone}
               >
                 Done
               </button>
+              </Box>
             </div>
           </div>
         );

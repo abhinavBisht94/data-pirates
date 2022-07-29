@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "../../CSS/todoV2/todoWithBackend.css";
 import { DisplayTodoV2 } from "./DisplayTodoV2";
+import { Button, Box, Center } from "@chakra-ui/react";
 
 export const TodoWithBackend = () => {
   let userid = localStorage.getItem("userid") || "";
@@ -9,6 +10,12 @@ export const TodoWithBackend = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  });
 
   const [displayTodo, setDisplayTodo] = useState([]);
   //& "GET" operation
@@ -66,18 +73,22 @@ export const TodoWithBackend = () => {
   return (
     <div id="todoV2">
       <form id="todoV2Form" onSubmit={handleSubmit}>
+        <Center height={'50px'} width={'800px'}>
         <input
-          className="todoV2FormInput"
+          className="todo-input"
           type="text"
           name="title"
+          ref={inputRef}
           placeholder="Enter Todo"
           required
           onChange={handleChange}
+          style={{fontSize:'1.1rem'}}
         />
 
-        <button className="todoV2FormButton" type="submit">
+        <button style={{borderRadius:'10%',marginLeft:'30px'}}  className="todo-button" type="submit">
           Add
         </button>
+        </Center>
       </form>
 
       {displayTodo && (

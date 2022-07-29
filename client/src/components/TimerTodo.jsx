@@ -9,7 +9,7 @@ const TimerTodo = () => {
   const[reload,setReload] = useState(true)
 
   const obj = JSON.parse(localStorage.getItem("currentObj"))
-  const todo = obj?.text
+  const todo = obj?.title
 
   function clearLocal(){
     localStorage.removeItem("currentObj")
@@ -19,7 +19,7 @@ const TimerTodo = () => {
   console.log(todo)
   return (
     <Box>
-    <Box maxW={'800px'} mx='auto'  bg='cornsilk'>
+    <Box maxW={'800px'} mx='auto'  bg='#f5dd90'>
        {todo && <Text p='10px' fontSize={"lg"} mt='30px' textAlign={'center'}>{todo}<Icon onClick={clearLocal} cursor={'pointer'} ml='20px' as={IoMdRemoveCircleOutline}/></Text>}
     </Box>
     </Box>

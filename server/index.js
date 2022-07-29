@@ -13,13 +13,16 @@ const UserSchema = require("./models/UserModel");
 const authRouter = require("./routes/auth.routes");
 const TaskModel = require("./models/TaskModel");
 const taskrouter = require("./routes/task.routes");
-const server = http.createServer(app);
+// const server = http.createServer(app);
 
 //---------------------------------------
 // Middleware
 const PORT = process.env.PORT || 8080;
 
 const app = express();
+
+const server = http.createServer(app);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
