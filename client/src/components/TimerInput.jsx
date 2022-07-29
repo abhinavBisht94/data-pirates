@@ -36,10 +36,10 @@ const TimerInput = ({handleTime,show,showHandle}) => {
     </Flex>) : (
       <>
       <Center height={'50px'} boxSizing='border-box'>
-     { hour===1 && <Text fontSize={'1.5rem'}>{hour} hour and  &nbsp; </Text>}
-     { hour>1 && <Text fontSize={'1.5rem'}>{hour} hours and  &nbsp; </Text>}
-     { min==1 && <Text fontSize={'1.5rem'}>{min} minute timer</Text>}
-     { min>1 && <Text fontSize={'1.5rem'}>{min} minutes timer</Text>}
+     { hour===1 && <Text fontSize={'1.5rem'}>{hour} hour &nbsp; </Text>}
+     { hour>1 && <Text fontSize={'1.5rem'}>{hour} hours &nbsp; </Text>}
+     { min==1 && <Text fontSize={'1.5rem'}>{hour>1 && "and"} {min} minute timer</Text>}
+     { min>1 && <Text fontSize={'1.5rem'}>{hour>1 && "and"} {min} minutes timer</Text>}
      {hour === -1 &&  <Text fontSize={'1.5rem'}>10 minutes timer</Text> }
       </Center>
       </>
