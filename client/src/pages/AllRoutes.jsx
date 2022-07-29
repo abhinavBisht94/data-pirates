@@ -6,6 +6,7 @@ import TimerPage from './TimerPage'
 import Login from './Login'
 import Signup from './Signup'
 import Diary from './Diary'
+import Room from './room'
 
 const AllRoutes = () => {
   return (
@@ -17,6 +18,7 @@ const AllRoutes = () => {
             <Route path='/login' element={<Login/>} />
             <Route path='/signup' element={<Signup />} />
             <Route path='/diary' element={<Diary />} />
+            <Route path='/room-chat' element={<Room />} />
 
         </Routes>
 

@@ -65,6 +65,7 @@ export default function Simple() {
                 <Link1 to='/'>Home</Link1>
                 <Link1 to='/timer'>Timer</Link1>
                 <Link1 to='/diary'>Diary</Link1>
+                <Link1 to='/room-chat'>Room Chat</Link1>
                 </>
              }
             </HStack>
