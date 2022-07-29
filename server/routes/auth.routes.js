@@ -30,6 +30,7 @@ authRouter.post("/signup", async (req, res) => {
         if (err) {
           res.status(500).send({ message: "Error occurred" });
         }
+        console.log("success:", success._id);
         return res.status(201).send({ message: "Sign up success" });
       });
     } else {

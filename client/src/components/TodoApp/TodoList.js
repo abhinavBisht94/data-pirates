@@ -4,7 +4,7 @@ import Todo from "./Todo";
 import { Box, Center, Spinner, Text } from "@chakra-ui/react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { ErrorOutlineSharp } from "@material-ui/icons";
+// import { ErrorOutlineSharp } from "@material-ui/icons";
 
 function TodoList() {
   const dispatch = useDispatch();
@@ -40,7 +40,7 @@ function TodoList() {
         // console.log(res)
       })
       .catch((err) => {
-        console.log(ErrorOutlineSharp);
+        // console.log(ErrorOutlineSharp);
       });
 
     const newTodos = [todo, ...todos];
@@ -61,7 +61,7 @@ function TodoList() {
         // console.log(res)
       })
       .catch((err) => {
-        console.log(ErrorOutlineSharp);
+        // console.log(ErrorOutlineSharp);
       });
 
     setTodos((prev) =>

@@ -31,10 +31,13 @@ taskrouter.post("/:userid", async (req, res) => {
 
 taskrouter.get("/:userid", async (req, res) => {
   const { userid } = req.params;
-  //   console.log("userid:", userid);
+  console.log("userid:", userid);
 
   //! "GET" all task based on userid
-  let searchResult = await TaskModel.find({ id: [userid] });
+
+  let searchResult = await TaskModel.find({
+    userid: { $regex: userid },
+  });
   console.log("searchResult:", [...searchResult]);
 
   return res.status(201).send(searchResult);

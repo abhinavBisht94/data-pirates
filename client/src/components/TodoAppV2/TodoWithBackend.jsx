@@ -75,7 +75,9 @@ export const TodoWithBackend = () => {
           onChange={handleChange}
         />
 
-        <button className="todoV2FormButton">Add</button>
+        <button className="todoV2FormButton" type="submit">
+          Add
+        </button>
       </form>
 
       {displayTodo && (

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import "../CSS/signup.css";
 
- const Signup = ({ googleButtonImage, appleButtonLogo }) => {
+const Signup = () => {
   const navigate = useNavigate();
 
   const [user, setUser] = useState({});
@@ -30,9 +30,8 @@ import "../CSS/signup.css";
       });
 
     if (response) {
-      console.log("response:", response.data[0]);
-      localStorage.setItem("token", response.data[0]);
-    //   navigate(`/${response.data[0]}`);
+      console.log("response:", response);
+      //   navigate(`/${response.data[0]}`);
     }
     if (error) {
       console.log("error:", error);
@@ -67,4 +66,4 @@ import "../CSS/signup.css";
   );
 };
 
-export default Signup
+export default Signup;
