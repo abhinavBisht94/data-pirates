@@ -23,7 +23,7 @@ import "../CSS/login.css";
 
     let error = null;
     let response = await axios
-      .post("http://localhost:8080/auth/login", user)
+      .post("http://localhost:3001/auth/login", user)
       .catch((err) => {
         console.log("err:", err);
         error = err.response.data.message;
