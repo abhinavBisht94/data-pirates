@@ -16,7 +16,7 @@ function Join() {
         }
     }
     return (
-    <div className="">
+    <div className="join">
         {!showChat ?(
         <div>
         <h3>Chat Room</h3>

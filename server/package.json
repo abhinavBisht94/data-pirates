@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "logs": "nodemon logs.js",
+    "start": "concurrently \"npm:dev\" \"npm:logs\""
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.0"
   },
   "keywords": [],
   "author": "",

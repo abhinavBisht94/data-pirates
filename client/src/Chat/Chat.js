@@ -18,9 +18,12 @@ function Chat({ socket, username, room }) {
         };
 
         await socket.emit("send_message", messageData);
+
         setMessageList((list) => [...list, messageData]);
+        console.log(messageList)
         setCurrentMessage("");
         }
+        
     };
 
     useEffect(() => {
@@ -68,7 +71,7 @@ function Chat({ socket, username, room }) {
             event.key === "Enter" && sendMessage();
             }}
         />
-        <button onClick={sendMessage}>send &#9658;</button>
+        <button onClick={sendMessage}>&#9658;</button>
         </div>
     </div>
     );
