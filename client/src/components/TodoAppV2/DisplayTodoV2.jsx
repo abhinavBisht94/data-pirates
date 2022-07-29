@@ -72,6 +72,10 @@ export const DisplayTodoV2 = ({ displayTodo, getData }) => {
     getData();
   };
 
+  const temp = (event) => {
+    setEditText(event.target.value);
+  };
+
   return (
     <div id="displayTodoV2">
       {displayTodo.map((task) => {
@@ -103,7 +107,15 @@ export const DisplayTodoV2 = ({ displayTodo, getData }) => {
               className="todoV2DivTrue"
               style={editid === task._id ? {} : { display: "none" }}
             >
-              <input type="text" value={editText} onKeyDown={handleChange} />
+              {/* onKeyDown={handleChange} */}
+              <input
+                type="text"
+                value={editText}
+                onChange={(e) => {
+                  temp(e);
+                }}
+              />
+
               <button
                 style={{ backgroundColor: "darkgreen" }}
                 onClick={handleEditDone}
