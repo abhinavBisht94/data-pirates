@@ -63,6 +63,7 @@ function Timer() {
           handleTime={handleTime}
           show={show}
           showHandle={showHandle}
+          time={time}
         />
       </Center>
       <div className="App">
@@ -102,7 +103,7 @@ function Timer() {
             onClick={() => {
               setKey((prev) => prev + 1);
               setPlay(false);
-              setTime(600);
+              setTime(1800);
               setShow(true);
             }}
           >
