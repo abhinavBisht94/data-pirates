@@ -2,8 +2,6 @@
 // Imports
 const express = require("express");
 const cors = require("cors");
-const http = require("http");
-const {Server} = require("socket.io");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
@@ -13,7 +11,6 @@ const UserSchema = require("./models/UserModel");
 const authRouter = require("./routes/auth.routes");
 const TaskModel = require("./models/TaskModel");
 const taskrouter = require("./routes/task.routes");
-const server = http.createServer(app);
 
 //---------------------------------------
 // Middleware
@@ -47,35 +44,5 @@ app.listen(PORT, async () => {
   console.log(`Connected to PORT=> ${PORT}`);
 });
 
-//.........Chat_app_server...............//
-
-const io = new Server(server, {
-    cors: {
-        origin: "http://localhost:8080",
-        methods : ["GET","POST"],
-    }
-})
-
-io.on("connection", (socket)=>{
-    console.log(`User connected: ${socket.id}`);
-
-    socket.on("join_room", (data)=>{
-        socket.join(data);
-        console.log(`user with ID: ${socket.id} joined room: ${data}`)
-    });
-
-    socket.on("send_message", (data)=>{
-        // console.log(data)
-        socket.to(data.room).emit("receive_message", data);
-    })
-
-    socket.on("disconnect",()=>{
-
-        console.log("user disconnect", socket.id);
-    })
-})
 
 
-server.listen(3001, ()=>{
-    console.log("server is runing")
-})
