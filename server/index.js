@@ -14,7 +14,6 @@ const authRouter = require("./routes/auth.routes");
 const TaskModel = require("./models/TaskModel");
 const taskrouter = require("./routes/task.routes");
 const app = express();
-const server = http.createServer(app);
 
 //---------------------------------------
 // Middleware
@@ -29,6 +28,7 @@ dotenv.config();
 app.use("/auth", authRouter);
 app.use("/task", taskrouter);
 
+const server = http.createServer(app);
 //---------------------------------------
 app.get("/", async (req, res) => {
   console.log("Hello data-pirates!");
