@@ -36,16 +36,7 @@ app.get("/", async (req, res) => {
   res.send("Hello data-pirates!");
 });
 
-//---------------------------------------
-// Server
-app.listen(PORT, async () => {
-  try {
-    await connection;
-  } catch {
-    console.log("Error ocurred while connecting");
-  }
-  console.log(`Connected to PORT=> ${PORT}`);
-});
+
 
 //.........Chat_app_server...............//
 
@@ -76,6 +67,19 @@ io.on("connection", (socket)=>{
 })
 
 
+
+//---------------------------------------
+// Server
+app.listen(PORT, async () => {
+  try {
+    await connection;
+  } catch {
+    console.log("Error ocurred while connecting");
+  }
+  console.log(`Connected to PORT=> ${PORT}`);
+});
+
+
 server.listen(3001, ()=>{
-    console.log("server is runing")
+  console.log("server is runing")
 })
