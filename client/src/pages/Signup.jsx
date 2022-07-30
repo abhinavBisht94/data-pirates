@@ -23,7 +23,7 @@ const Signup = () => {
 
     let error = null;
     let response = await axios
-      .post("http://localhost:3001/auth/signup", user)
+      .post("http://localhost:8080/auth/signup", user)
       .catch((err) => {
         console.log("err:", err);
         error = err.response.data.message;

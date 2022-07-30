@@ -23,7 +23,7 @@ export const DisplayTodoV2 = ({ displayTodo, getData }) => {
   const taskDelete = async (taskid) => {
     let error = null;
     let response = await axios
-      .delete(`http://localhost:3001/task/${userid}/${taskid}`)
+      .delete(`http://localhost:8080/task/${userid}/${taskid}`)
       .catch((err) => {
         console.log("err:", err);
         error = err.response.data.message;
@@ -56,7 +56,7 @@ export const DisplayTodoV2 = ({ displayTodo, getData }) => {
 
     let error = null;
     let response = await axios
-      .patch(`http://localhost:3001/task/${userid}/${editid}`, send)
+      .patch(`http://localhost:8080/task/${userid}/${editid}`, send)
       .catch((err) => {
         console.log("err:", err);
         error = err.response.data.message;
