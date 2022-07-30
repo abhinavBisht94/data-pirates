@@ -22,7 +22,7 @@ export const TodoWithBackend = () => {
   const getData = async () => {
     let error = null;
     let response = await axios
-      .get(`http://localhost:8080/task/${userid}`)
+      .get(`https://data-pirates-july.herokuapp.com/task/${userid}`)
       .then((res) => {
         console.log("res.data:", res.data);
         setDisplayTodo(res.data);
@@ -54,7 +54,7 @@ export const TodoWithBackend = () => {
 
     let error = null;
     let response = await axios
-      .post(`http://localhost:8080/task/${userid}`, todo)
+      .post(`https://data-pirates-july.herokuapp.com/task/${userid}`, todo)
       .catch((err) => {
         console.log("err:", err);
         error = err.response.data.message;

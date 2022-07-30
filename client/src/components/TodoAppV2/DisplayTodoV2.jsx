@@ -33,7 +33,7 @@ export const DisplayTodoV2 = ({ displayTodo, getData }) => {
   const taskDelete = async (taskid) => {
     let error = null;
     let response = await axios
-      .delete(`http://localhost:8080/task/${userid}/${taskid}`)
+      .delete(`https://data-pirates-july.herokuapp.com/task/${userid}/${taskid}`)
       .catch((err) => {
         console.log("err:", err);
         error = err.response.data.message;
@@ -66,7 +66,7 @@ export const DisplayTodoV2 = ({ displayTodo, getData }) => {
 
     let error = null;
     let response = await axios
-      .patch(`http://localhost:8080/task/${userid}/${editid}`, send)
+      .patch(`https://data-pirates-july.herokuapp.com/${userid}/${editid}`, send)
       .catch((err) => {
         console.log("err:", err);
         error = err.response.data.message;
